@@ -23,12 +23,12 @@ This was modified from Wingman4l7/relisterine to work in Python 3. It also can r
 
 ### Pre-Requisites: ###
 
-docker
-docker-compose
+- docker
+- docker-compose
 
 cd into the directory with the github repo on your machine
-Run "docker-compose build" to build the docker image from the Dockerfile
-Run "docker-compose up -d" to run the docker image in detached mode
+Run "docker-compose up --build -d" to build and run the docker image from the Dockerfile
+
 NOTE:
 
 The cron schedule by default runs the script “At 1AM every Monday”. Modify this in the Dockerfile to adjust the schedule
