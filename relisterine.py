@@ -10,7 +10,9 @@ from colorama import init, Fore, Style
 init(autoreset=True)
 opts = Options()  # options for chromedriver
 opts.add_argument("--window-size=1000,1000")  # specifies window width,height
-# opts.add_argument("headless")  # runs without the browser visible
+opts.add_argument("headless")  # runs without the browser visible
+opts.add_argument("--remote-debugging-port=9222")
+opts.add_argument("--no-sandbox")
 
 # initialize chromedriver global variable.
 chromedriver = None
@@ -102,7 +104,7 @@ def click_renew_links(renew_links):
 def main():
     global chromedriver  # use the global chromedriver variable.
 
-    chromedriver = webdriver.Chrome(executable_path='/Python27/selenium/webdriver/chromedriver', options=opts)
+    chromedriver = webdriver.Chrome(executable_path='/usr/bin/chromedriver', options=opts)
     chromedriver.get('https://accounts.craigslist.org/login/home')
 
     ### parse config file with login credentials ###
@@ -116,8 +118,8 @@ def main():
 
     renew_links = check_for_renewals()
     if len(renew_links):  # renew links are present
-        print(bright_green + "%d listings eligible for renewal have been found!") % len(renew_links)
-        click_renew_links(renew_links)
+       print(bright_green + "%d listings eligible for renewal have been found!") % len(renew_links)         
+       click_renew_links(renew_links)
     else:  # no renewal links at this time
         print(bright_yellow + "No listings to renew.  Exiting!")
 

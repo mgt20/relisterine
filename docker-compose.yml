@@ -1,0 +1,7 @@
+version: '3'
+
+services:
+  relisterine:
+    build: .
+    environment:
+      - TZ=America/Los_Angeles
