@@ -7,6 +7,9 @@
 </p>
 
 ## About ##
+
+Includes a Dockerfile which allows the script to run on a cron schedule inside of its own Docker container. Can be ran with or without docker.
+
 I was posting a lot of stuff to Craigslist pretty regularly, and working on browser automation projects using Selenium, so this seemed like a natural quick practice script that would be a personally useful tool.
 
 There are several similar scripts on Github, using different languages and dependencies, all in various stages of polish and functionality.  As of my initial commit, it has been running daily for several months now with no issues.
@@ -16,7 +19,19 @@ It currently only supports a single Craigslist user -- it is not intended for "c
 As usual, credit goes to [AlliedEnvy](https://github.com/AlliedEnvy) for the clever name.
 
 ## Installation ##
-This was written for [Python 2.7.x](https://www.python.org/downloads/).  It will likely work in Python 3.x.
+This was modified from Wingman4l7/relisterine to work in Python 3. It also can run in a standalone Docker container.
+
+### Pre-Requisites: ###
+
+docker
+docker-compose
+
+cd into the directory with the github repo on your machine
+Run "docker-compose build" to build the docker image from the Dockerfile
+Run "docker-compose up -d" to run the docker image in detached mode
+NOTE:
+
+The cron schedule by default runs the script “At 1AM every Monday”. Modify this in the Dockerfile to adjust the schedule
 
 ### Dependencies ###
 The dependencies are `configparser` *(for reading your account login info from your config file)*, `selenium` *(for browser automation)*, and `colorama` *(for nice pretty colored console text that is also Windows-compatible)*.
