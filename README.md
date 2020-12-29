@@ -31,7 +31,7 @@ Run "docker-compose up --build -d" to build and run the docker image from the Do
 
 NOTE:
 
-The cron schedule by default runs the script “At 1AM every Monday”. Modify this in the Dockerfile to adjust the schedule
+The cron schedule by default runs the script “At 1AM everyday”. Modify this in the Dockerfile to adjust the schedule
 
 ### Dependencies ###
 The dependencies are `configparser` *(for reading your account login info from your config file)*, `selenium` *(for browser automation)*, and `colorama` *(for nice pretty colored console text that is also Windows-compatible)*.
