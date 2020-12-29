@@ -23,6 +23,6 @@ COPY requirements.txt /requirements.txt
 # RUN echo "* * * * * echo hello" | crontab -
 RUN pip3 install -r requirements.txt
 
-RUN echo "0 1 * * * python /relisterine.py" | crontab -
+RUN echo "0 1 * * 1 python /relisterine.py" | crontab -
 
 CMD ["cron","-f"]
