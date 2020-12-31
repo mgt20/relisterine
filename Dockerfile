@@ -8,11 +8,6 @@ RUN apt-get update && apt-get install -yq \
     curl=7.64.0-4+deb10u1 \
     cron=3.0pl1-134+deb10u1
 
-# xvfb - X server display
-# ADD xvfb-chromium /usr/bin/xvfb-chromium
-# RUN ln -s /usr/bin/xvfb-chromium /usr/bin/google-chrome \
-#     && chmod 777 /usr/bin/xvfb-chromium
-
 # create symlinks to chromedriver and geckodriver (to the PATH)
 RUN chmod 777 /usr/bin/chromedriver
 
