@@ -118,7 +118,7 @@ def main():
 
     renew_links = check_for_renewals()
     if len(renew_links):  # renew links are present
-       print(bright_green + "%d listings eligible for renewal have been found!") % len(renew_links)         
+       print((bright_green + "%d listings eligible for renewal have been found!") % len(renew_links))
        click_renew_links(renew_links)
     else:  # no renewal links at this time
         print(bright_yellow + "No listings to renew.  Exiting!")
