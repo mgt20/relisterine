@@ -1,0 +1,2 @@
+0 2 * * 0 root /usr/local/bin/python /app/relisterine.py > /proc/1/fd/1 2>/proc/1/fd/2
+
