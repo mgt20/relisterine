@@ -109,7 +109,7 @@ def main():
 
     ### parse config file with login credentials ###
     config = configparser.ConfigParser()
-    config.read('relisterine_config.ini')
+    config.read('/app/relisterine_config.ini')
     email_handle = config.get('craigslist.org', 'EmailHandle')
     password = config.get('craigslist.org', 'Password')
     # print(bright_green + "Login credentials loaded from config file!")
